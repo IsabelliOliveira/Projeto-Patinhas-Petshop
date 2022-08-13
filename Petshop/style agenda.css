@@ -1,0 +1,51 @@
+body{
+
+    background-color: #f3f4f6;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+ul{
+    background: white;
+    color: #613387 ;
+    display: flex;
+    font-size: 20px;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px;
+
+}
+
+nav a:hover{
+    background-color: #613387;
+    color: white;
+    padding: 16px;
+    
+}
+
+.p1{
+    background: rgb(253, 253, 150);
+    text-align: center;
+}
+
+.p2{
+    background: rgb(241, 150, 253);
+    text-align: center;
+}
+
+
+H2{
+    text-align: center;
+}
+
+footer{
+    background-color: #613387;
+    color: white;
+}
+
+.Social{
+    justify-content: right;
+    text-align: center;
+}
+
