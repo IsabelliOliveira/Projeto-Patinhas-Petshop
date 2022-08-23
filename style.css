@@ -1,0 +1,71 @@
+body{
+
+    background-color: #f3f4f6;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+nav{
+    background-color: rgb(188, 163, 230);
+    overflow: hidden;
+    width: 100%;
+    padding-left: 5px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.logo{
+	float: left;
+	display: flex;
+	padding: 5px 16px;
+}
+
+nav a{
+    color: #ffffff;
+    text-decoration: none;
+    float: right;
+    display: flex;
+    padding: 14px 16px;
+}
+
+nav a:hover{
+    transition: 0.5s;
+    background-color: #613387;
+    text-decoration: none;
+    padding: 15px 17px;
+    border-radius: 50px;
+}
+
+.welcome{
+    color: rgb(136, 102, 196);
+    padding: 50px;
+    text-align: start;
+    display: flex;
+}
+
+.figure{
+    border-radius: 150px;
+}
+
+.sale p{
+    font-size: 25px;
+    margin: 5%;
+    padding: 15px;
+    border-radius: 9px;
+    text-align: left;
+    background-color: #e5c5ff
+}
+
+.sale h2{
+    color: #613387;
+}
+
+footer{
+    background-color: #613387;
+    color: white;
+}
+
+.Social{
+    justify-content: right;
+    text-align: center;
+}
