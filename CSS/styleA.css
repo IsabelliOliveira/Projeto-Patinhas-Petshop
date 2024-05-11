@@ -1,0 +1,140 @@
+body{
+
+    background-color: #f3f4f6;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+nav{
+    background-color: rgb(188, 163, 230);
+    overflow: hidden;
+    width: 100%;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.logo{
+	float: left;
+	display: flex;
+	padding: 5px 16px;
+}
+
+nav a{
+    color: #ffffff;
+    text-decoration: none;
+    float: right;
+    display: flex;
+    padding: 14px 16px;
+}
+
+nav a:hover{
+    transition: 0.5s;
+    background-color: #613387;
+    text-decoration: none;
+    padding: 15px 17px;
+    border-radius: 50px;
+}
+
+.welcome{
+	border-radius: 5px;
+    color: rgb(136, 102, 196);
+    padding: 70px;
+    display: flex;
+}
+
+.titulo{
+    font-size: 30px;
+    color: #613387;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.comunicado{
+	margin: 5%;
+    padding: 15px;
+    border-radius: 9px;
+    text-align: center;
+    background-color: #e5c5ff;
+}
+
+.form{
+	overflow: hidden;
+	background:#e5ceff;
+	width: 70%;
+	height: 70%;
+	margin: auto ;
+	text-align: center;
+	border: 2px solid#613387;
+	border-radius: 10px;
+}
+
+.form h1{
+	background-color: #ab5eeb;
+	padding: 10px;
+}
+
+.form h2{
+	background-color: #caa3eb;
+	padding: 10px;
+}
+
+.form h4{
+	color: #38343b;
+
+}
+
+input,select{
+	border-radius: 10px;
+	height: 30px;
+	border: none;
+	margin: 5px;
+}
+input[type="radio"]{
+	height: 12px;
+}
+input[type="submit"]{
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	width: 80px;
+	height: 35px;
+}
+input[type="button"]{
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+	width: 80px;
+	height: 35px;
+}
+input[type="submit"]:hover{
+	background: #613387;
+	color: #fff;
+}
+input[type="button"]:hover{
+	background: #613387;
+	color: #fff;
+}
+@media (max-width: 680px) {
+	.form { 
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 80%;
+	height: auto;
+	margin-top: 0  ;
+	}
+	input, label{ 
+	margin: 5px;
+	}   
+}
+
+footer{
+    background-color: #613387;
+    color: white;
+}
+
+.Social{
+    justify-content: right;
+    text-align: center;
+}
+
