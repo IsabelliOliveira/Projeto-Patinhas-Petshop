@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas</title>
+
+
+    <link rel="stylesheet" href="/CSS/styleV.CSS">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="/img/login.png" width="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Vendas </a>
+            <a class="nav-item nav-link" href="#">Agendamento</a>
+            <a class="nav-item nav-link" href="#">Produtos</a>
+            <a class="nav-item nav-link " href="#">Relatorios</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main-vendas">
+
+        
+        <div class="vandas">
+          
+            <h4>Cadastro de Venda de Produtos</h4>
+          
+            <br>
+
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4"> idProduto</label>
+                    <input type="number" class="form-control" id="inputEmail4" >
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Quantidade</label>
+                    <input type="number" class="form-control" id="inputPassword4">
+
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">CPF</label>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputEstado">Forma de Pagamento</label>
+                    <select id="inputEstado" class="form-control">
+                      <option selected>Escolher...</option>
+                      <option>Debito</option>
+                      <option>Credito</option>
+                      <option>Pix</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="Valor">Valor de Produtos</label>
+                    <input type="number" class="form-control" >
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">Nome </label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputEstado">Serviço</label>
+                      <select id="inputEstado" class="form-control">
+                        <option selected>Escolher...</option>
+                        <option>Banho</option>
+                        <option>Banho + tosa bebe</option>
+                        <option>Banho + tosa higienica</option>
+                        <option>Banho + tosa tesoura</option>
+                        <option>N/A</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="Valor">Valor do Serviço</label>
+                      <input type="number" class="form-control" >
+                    </div>
+                  </div>
+                
+                  <div class="form-group">
+                    <label for="inputAddress2">Endereço 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
+                  </div>
+                <div class="form-group">
+                  
+            <br>
+
+                <button type="submit" class="btn btn-primary">Gerar numero de pedido</button>
+                <button type="submit" class="btn btn-primary">Gerar numero de Pagamento</button>
+            <br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Finalizar</button>
+              </form>
+
+        </div>
+        
+      </div>
+</body>
+</html>
