@@ -1,0 +1,22 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fundo.png');
+    background-repeat: repeat;
+    background-size: 100%;
+    
+}
+
+.main-vendas{
+    contain: layout inline-size style;
+  }
+  
+.vandas{
+    background-color: rgba(253, 255, 164, 0.521);
+    box-shadow: inset 2px 1px 8px #ccc;
+    padding: 30px;
+    width: 85%;
+    margin: 2rem auto;
+    border-radius: 2px;
+    text-align: center;
+  }
