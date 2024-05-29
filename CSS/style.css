@@ -52,94 +52,94 @@ body {
     background-image: url('../img/fundo.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-    #container {
-        width: 320px;
-        height: 520px;
-        border-radius: 10px;
-        -webkit-box-shadow: 0px 0px 6px -1px #000000; 
-        box-shadow: 0px 0px 6px -1px #000000;
-        background: #785eef;
+#container {
+    width: 320px;
+    height: 520px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 6px -1px #000000;
+    box-shadow: 0px 0px 6px -1px #000000;
+    background: #785eef;
 
-        display: flex;
-        align-items: center;
-    }   
+    display: flex;
+    align-items: center;
+}
 
-        #container .banner {
-            width: 520px;
-            height: 520px;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            background: #785eef;
+#container .banner {
+    width: 520px;
+    height: 520px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #785eef;
 
-            display: none;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-        }
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-        #container .box-login {
-            width: 320px;
-            height: 520px;
-            border-radius: 10px;
-            background: #fff;
+#container .box-login {
+    width: 320px;
+    height: 520px;
+    border-radius: 10px;
+    background: #fff;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-            .box-login .box {
-                width: 80%;
-                height: 320px;
+.box-login .box {
+    width: 80%;
+    height: 320px;
 
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-            }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
-                .box .social {
-                    width: 240px;
-                    height: 42px;
+.box .social {
+    width: 240px;
+    height: 42px;
 
-                    display: flex;
-                    justify-content: space-evenly;
-                    align-items: center;
-                }
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-                    .social img {
-                        cursor: pointer;
-                    }
+.social img {
+    cursor: pointer;
+}
 
-            .box-login .box-account {
-                width: 80%;
-                height: 360px;
+.box-login .box-account {
+    width: 80%;
+    height: 360px;
 
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-            }
-    
-    #bubble {
-        cursor: pointer;
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        right: 15px;
-        bottom: 15px;
-        border-radius: 50%;
-        border: 1px solid #483D8B;
-        background: slateblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+#bubble {
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 1px solid #483D8B;
+    background: slateblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
