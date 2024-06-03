@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 02/06/2024 às 17:08
+-- Tempo de geração: 03/06/2024 às 00:27
 -- Versão do servidor: 8.3.0
 -- Versão do PHP: 8.2.18
 
@@ -114,6 +114,32 @@ INSERT INTO `endereco` (`idEndereco`, `logradouro`, `Numero`, `Complemento`, `Ba
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `entradas`
+--
+
+DROP TABLE IF EXISTS `entradas`;
+CREATE TABLE IF NOT EXISTS `entradas` (
+  `idEntrada` int NOT NULL AUTO_INCREMENT,
+  `idProduto` int NOT NULL,
+  `Quantidade_Entrada` int NOT NULL,
+  `Data_Entrada` date NOT NULL,
+  PRIMARY KEY (`idEntrada`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `entradas`
+--
+
+INSERT INTO `entradas` (`idEntrada`, `idProduto`, `Quantidade_Entrada`, `Data_Entrada`) VALUES
+(1, 1, 100, '2024-06-01'),
+(2, 2, 200, '2024-06-02'),
+(3, 3, 150, '2024-06-03'),
+(4, 4, 80, '2024-06-04'),
+(5, 5, 120, '2024-06-05');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `fornecedor`
 --
 
@@ -158,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `senha` varchar(16) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`idFuncionario`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `funcionario`
@@ -186,7 +212,63 @@ CREATE TABLE IF NOT EXISTS `itempedido` (
   PRIMARY KEY (`id_item_pedido`),
   KEY `idVenda` (`idVenda`),
   KEY `idProduto` (`idProduto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `itempedido`
+--
+
+INSERT INTO `itempedido` (`id_item_pedido`, `idVenda`, `idProduto`, `Quantidade_Vendida`) VALUES
+(1, 1, 1, 2),
+(2, 1, 2, 1),
+(3, 2, 3, 3),
+(4, 3, 4, 1),
+(5, 3, 5, 2),
+(6, 4, 6, 2),
+(7, 5, 7, 1),
+(8, 6, 8, 2),
+(9, 6, 9, 1),
+(10, 7, 10, 3),
+(11, 7, 11, 1),
+(12, 8, 12, 1),
+(13, 8, 13, 2),
+(14, 9, 14, 2),
+(15, 10, 15, 3),
+(16, 11, 16, 1),
+(17, 11, 17, 2),
+(18, 12, 18, 2),
+(19, 13, 19, 1),
+(20, 13, 20, 2),
+(21, 14, 21, 3),
+(22, 15, 22, 1),
+(23, 15, 23, 2),
+(24, 16, 24, 2),
+(25, 17, 25, 1),
+(26, 17, 1, 2),
+(27, 18, 2, 3),
+(28, 19, 3, 1),
+(29, 20, 4, 2),
+(30, 21, 5, 2),
+(31, 21, 6, 1),
+(32, 22, 7, 3),
+(33, 23, 8, 1),
+(34, 23, 9, 2),
+(35, 24, 10, 2),
+(36, 25, 11, 1),
+(37, 25, 12, 2),
+(38, 26, 13, 3),
+(39, 27, 14, 1),
+(40, 28, 15, 2),
+(41, 29, 16, 2),
+(42, 29, 17, 1),
+(43, 30, 18, 3),
+(44, 31, 19, 1),
+(45, 31, 20, 2),
+(46, 32, 21, 2),
+(47, 33, 22, 1),
+(48, 33, 23, 2),
+(49, 34, 24, 3),
+(50, 35, 25, 1);
 
 -- --------------------------------------------------------
 
@@ -203,7 +285,63 @@ CREATE TABLE IF NOT EXISTS `pagamento` (
   `Valor_Pago` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`idPagamento`),
   KEY `idVenda` (`idVenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `pagamento`
+--
+
+INSERT INTO `pagamento` (`idPagamento`, `idVenda`, `Metodo_Pagamento`, `Data_Pagamento`, `Valor_Pago`) VALUES
+(1, 1, 'Cartão de Crédito', '2024-06-02', 100.00),
+(2, 2, 'Dinheiro', '2024-06-03', 150.00),
+(3, 3, 'Transferência Bancária', '2024-06-04', 200.00),
+(4, 4, 'Dinheiro', '2024-06-05', 120.00),
+(5, 5, 'Dinheiro', '2024-06-06', 180.00),
+(6, 6, 'Cartão de Crédito', '2024-06-07', 220.00),
+(7, 7, 'Transferência Bancária', '2024-06-08', 300.00),
+(8, 8, 'Dinheiro', '2024-06-09', 90.00),
+(9, 9, 'Cartão de Crédito', '2024-06-10', 130.00),
+(10, 10, 'Cartão de Débito', '2024-06-11', 250.00),
+(11, 11, 'Transferência Bancária', '2024-06-12', 180.00),
+(12, 12, 'Dinheiro', '2024-06-13', 190.00),
+(13, 13, 'Cartão de Crédito', '2024-06-14', 210.00),
+(14, 14, 'Dinheiro', '2024-06-15', 280.00),
+(15, 15, 'Cartão de Débito', '2024-06-16', 150.00),
+(16, 16, 'Transferência Bancária', '2024-06-17', 200.00),
+(17, 17, 'Dinheiro', '2024-06-18', 110.00),
+(18, 18, 'Cartão de Crédito', '2024-06-19', 90.00),
+(19, 19, 'Cartão de Débito', '2024-06-20', 130.00),
+(20, 20, 'Transferência Bancária', '2024-06-21', 220.00),
+(21, 21, 'Dinheiro', '2024-06-22', 180.00),
+(22, 22, 'Cartão de Crédito', '2024-06-23', 250.00),
+(23, 23, 'Dinheiro', '2024-06-24', 280.00),
+(24, 24, 'Transferência Bancária', '2024-06-25', 190.00),
+(25, 25, 'Cartão de Débito', '2024-06-26', 200.00),
+(26, 26, 'Cartão de Crédito', '2024-06-27', 220.00),
+(27, 27, 'Transferência Bancária', '2024-06-28', 150.00),
+(28, 28, 'Dinheiro', '2024-06-29', 160.00),
+(29, 29, 'Cartão de Crédito', '2024-06-30', 180.00),
+(30, 30, 'Dinheiro', '2024-07-01', 210.00),
+(31, 31, 'Cartão de Débito', '2024-07-02', 250.00),
+(32, 32, 'Transferência Bancária', '2024-07-03', 180.00),
+(33, 33, 'Dinheiro', '2024-07-04', 300.00),
+(34, 34, 'Cartão de Crédito', '2024-07-05', 220.00),
+(35, 35, 'Transferência Bancária', '2024-07-06', 200.00),
+(36, 36, 'Dinheiro', '2024-07-07', 150.00),
+(37, 37, 'Cartão de Débito', '2024-07-08', 180.00),
+(38, 38, 'Cartão de Crédito', '2024-07-09', 200.00),
+(39, 39, 'Transferência Bancária', '2024-07-10', 220.00),
+(40, 40, 'Dinheiro', '2024-07-11', 250.00),
+(41, 41, 'Cartão de Crédito', '2024-07-12', 180.00),
+(42, 42, 'Cartão de Débito', '2024-07-13', 190.00),
+(43, 43, 'Transferência Bancária', '2024-07-14', 210.00),
+(44, 44, 'Dinheiro', '2024-07-15', 280.00),
+(45, 45, 'Cartão de Crédito', '2024-07-16', 150.00),
+(46, 46, 'Dinheiro', '2024-07-17', 200.00),
+(47, 47, 'Transferência Bancária', '2024-07-18', 110.00),
+(48, 48, 'Cartão de Débito', '2024-07-19', 90.00),
+(49, 49, 'Dinheiro', '2024-07-20', 130.00),
+(50, 50, 'Cartão de Crédito', '2024-07-21', 220.00);
 
 -- --------------------------------------------------------
 
@@ -256,7 +394,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `idFornecedor` int DEFAULT NULL,
   PRIMARY KEY (`idProduto`),
   KEY `idFornecedor` (`idFornecedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `produto`
@@ -357,7 +495,9 @@ INSERT INTO `produto` (`idProduto`, `Nome`, `Descricao`, `Preco`, `Quantidade_Es
 (102, 'Banho e tosa higienica', 'A tosa higiênica não tem restrições em relação à raça. Ela é feita para reduzir o comprimento dos pelos em lugares específicos do corpo do animal, como patas, barriga e genitália. Afinal, esses lugares estão mais propensos a acumular sujeira.', 55.00, 0, 0, NULL),
 (103, 'Banho e tosa bebê', 'Apesar do nome, não quer dizer que essa tosa seja para cães filhotes. O objetivo da tosa bebê é deixar o cão com aparência infantil, com pelos curtos e arredondados, além de facilitar a escovação.', 65.00, 0, 0, NULL),
 (104, 'Banho e tosa verão', 'Esse tipo de tosa é indicado de acordo com a avaliação do esteticista, e geralmente acontece quando o pet está com muito nós. Para garantir seu bem-estar e diminuir as chances de ocasionar fungos na pele, essa tosa é a melhor opção. Porem visto que exista uma complexidade e riscos, o tutor deve ter conhecimento e autorizar os serviços.', 90.00, 0, 0, NULL),
-(105, 'Banho e tosa de raça', 'A tosa de raça mantém as características próprias da raça. No Schnauzer, por exemplo, o aspecto de saia na parte traseira é mantido pelo corte dos pelos. No Poodle, os pompons nas patas lembram o aspecto fofinho dos seus pelos.', 80.00, 0, 0, NULL);
+(105, 'Banho e tosa de raça', 'A tosa de raça mantém as características próprias da raça. No Schnauzer, por exemplo, o aspecto de saia na parte traseira é mantido pelo corte dos pelos. No Poodle, os pompons nas patas lembram o aspecto fofinho dos seus pelos.', 80.00, 0, 0, NULL),
+(106, 'Ração para Cachorros Pedigre', 'Ração premium para cachorros adultos de 25kg', 200.00, 50, 10, NULL),
+(107, 'Ração para Cachorros Pedigre', 'Ração premium para cachorros adultos de 25kg', 200.00, 50, 10, NULL);
 
 -- --------------------------------------------------------
 
@@ -373,6 +513,17 @@ CREATE TABLE IF NOT EXISTS `servico` (
   `Preco` decimal(10,2) NOT NULL,
   PRIMARY KEY (`idServico`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `servico`
+--
+
+INSERT INTO `servico` (`idServico`, `Nome`, `Descricao`, `Preco`) VALUES
+(1, 'Banho', NULL, 50.00),
+(2, 'Banho e tosa higienica', 'Tem o objetivo de diminuir a pelagem no local onde se acumula mais sujeira. Geralmente, ela é feita na região genital e nas patas, entre os dedos. Nos machos, a barriga também é tosada.', 55.00),
+(3, 'Banho e tosa bebê', 'Esse tipo deixa o pêlo similar ao que era quando o cão era filhote. Recomendados para raças como Maltês, Lhasa Apso e Shih Tzu.', 65.00),
+(4, 'Banho e tosa geral com máquina', 'O pêlo fica mais rente à pele e pode variar de tamanho, conforme a lâmina utilizada.', 90.00),
+(5, 'Banho e tosa de raça', 'Muito parecida com a tosa estética, por ter o mesmo objetivo de manter o padrão da raça. Muito indicada para poodles, Schnauzer e Yorkshires.', 80.00);
 
 -- --------------------------------------------------------
 
@@ -392,7 +543,63 @@ CREATE TABLE IF NOT EXISTS `venda` (
   `Status_Pagamento` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`idVenda`),
   KEY `idCliente` (`idCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `venda`
+--
+
+INSERT INTO `venda` (`idVenda`, `Data_Venda`, `idCliente`, `Total_Venda`, `Total_Produtos`, `Total_Servicos`, `Metodo_Pagamento`, `Status_Pagamento`) VALUES
+(1, '2024-05-02', 1, 100.00, 80.00, 20.00, 'Cartão de Crédito', 'Completo'),
+(2, '2024-05-03', 2, 150.00, 120.00, 30.00, 'Dinheiro', 'Completo'),
+(3, '2024-05-04', 3, 200.00, 160.00, 40.00, 'Transferência Bancária', 'Completo'),
+(4, '2024-05-05', 5, 120.00, 100.00, 20.00, 'Cartão de Débito', 'Pendente'),
+(5, '2024-05-06', 4, 180.00, 140.00, 40.00, 'Dinheiro', 'Completo'),
+(6, '2024-05-07', 8, 220.00, 180.00, 40.00, 'Cartão de Crédito', 'Completo'),
+(7, '2024-05-08', 2, 300.00, 240.00, 60.00, 'Transferência Bancária', 'Completo'),
+(8, '2024-04-09', 7, 90.00, 70.00, 20.00, 'Dinheiro', 'Completo'),
+(9, '2024-04-10', 2, 130.00, 100.00, 30.00, 'Cartão de Crédito', 'Pendente'),
+(10, '2024-04-11', 7, 250.00, 200.00, 50.00, 'Cartão de Débito', 'Completo'),
+(11, '2024-04-12', 9, 180.00, 140.00, 40.00, 'Transferência Bancária', 'Pendente'),
+(12, '2024-04-13', 7, 190.00, 150.00, 40.00, 'Dinheiro', 'Completo'),
+(13, '2024-04-14', 3, 210.00, 170.00, 40.00, 'Cartão de Crédito', 'Completo'),
+(14, '2024-03-15', 7, 280.00, 220.00, 60.00, 'Dinheiro', 'Completo'),
+(15, '2024-03-16', 4, 150.00, 120.00, 30.00, 'Cartão de Débito', 'Completo'),
+(16, '2024-03-17', 6, 200.00, 160.00, 40.00, 'Transferência Bancária', 'Completo'),
+(17, '2024-03-18', 7, 110.00, 90.00, 20.00, 'Dinheiro', 'Pendente'),
+(18, '2024-03-19', 8, 90.00, 70.00, 20.00, 'Cartão de Crédito', 'Pendente'),
+(19, '2024-03-20', 10, 130.00, 100.00, 30.00, 'Cartão de Débito', 'Completo'),
+(20, '2024-03-21', 5, 220.00, 180.00, 40.00, 'Transferência Bancária', 'Completo'),
+(21, '2024-03-22', 6, 180.00, 140.00, 40.00, 'Dinheiro', 'Completo'),
+(22, '2024-03-23', 2, 250.00, 200.00, 50.00, 'Cartão de Crédito', 'Completo'),
+(23, '2024-02-24', 6, 280.00, 220.00, 60.00, 'Dinheiro', 'Pendente'),
+(24, '2024-02-25', 7, 190.00, 150.00, 40.00, 'Transferência Bancária', 'Completo'),
+(25, '2024-06-26', 8, 200.00, 160.00, 40.00, 'Cartão de Débito', 'Completo'),
+(26, '2024-06-27', 9, 220.00, 180.00, 40.00, 'Cartão de Crédito', 'Completo'),
+(27, '2024-06-28', 4, 150.00, 120.00, 30.00, 'Transferência Bancária', 'Pendente'),
+(28, '2024-06-29', 9, 160.00, 130.00, 30.00, 'Dinheiro', 'Completo'),
+(29, '2024-06-30', 10, 180.00, 140.00, 40.00, 'Cartão de Crédito', 'Completo'),
+(30, '2024-07-01', 5, 210.00, 170.00, 40.00, 'Dinheiro', 'Completo'),
+(31, '2024-07-02', 7, 250.00, 200.00, 50.00, 'Cartão de Débito', 'Pendente'),
+(32, '2024-07-03', 4, 180.00, 140.00, 40.00, 'Transferência Bancária', 'Completo'),
+(33, '2024-07-04', 6, 300.00, 240.00, 60.00, 'Dinheiro', 'Completo'),
+(34, '2024-07-05', 8, 220.00, 180.00, 40.00, 'Cartão de Crédito', 'Completo'),
+(35, '2024-07-06', 7, 200.00, 160.00, 40.00, 'Transferência Bancária', 'Completo'),
+(36, '2024-07-07', 8, 150.00, 120.00, 30.00, 'Dinheiro', 'Completo'),
+(37, '2024-07-08', 6, 180.00, 140.00, 40.00, 'Cartão de Débito', 'Completo'),
+(38, '2024-07-09', 4, 200.00, 160.00, 40.00, 'Cartão de Crédito', 'Pendente'),
+(39, '2024-07-10', 4, 220.00, 180.00, 40.00, 'Transferência Bancária', 'Completo'),
+(40, '2024-07-11', 2, 250.00, 200.00, 50.00, 'Dinheiro', 'Completo'),
+(41, '2024-07-12', 3, 180.00, 140.00, 40.00, 'Cartão de Crédito', 'Completo'),
+(42, '2024-07-13', 4, 190.00, 150.00, 40.00, 'Cartão de Débito', 'Pendente'),
+(43, '2024-07-14', 4, 210.00, 170.00, 40.00, 'Transferência Bancária', 'Completo'),
+(44, '2024-07-15', 5, 280.00, 220.00, 60.00, 'Dinheiro', 'Completo'),
+(45, '2024-07-16', 8, 150.00, 120.00, 30.00, 'Cartão de Crédito', 'Completo'),
+(46, '2024-07-17', 4, 200.00, 160.00, 40.00, 'Dinheiro', 'Pendente'),
+(47, '2024-07-18', 6, 110.00, 90.00, 20.00, 'Transferência Bancária', 'Completo'),
+(48, '2024-07-19', 8, 90.00, 70.00, 20.00, 'Cartão de Débito', 'Pendente'),
+(49, '2024-07-20', 7, 130.00, 100.00, 30.00, 'Dinheiro', 'Completo'),
+(50, '2024-07-21', 6, 220.00, 180.00, 40.00, 'Cartão de Crédito', 'Completo');
 
 --
 -- Restrições para tabelas despejadas
