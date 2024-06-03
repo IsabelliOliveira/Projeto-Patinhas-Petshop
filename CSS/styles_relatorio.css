@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 10PX;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo para as células da tabela */
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #e6c9fd;
+}
+
+tr:nth-child(even) {
+    background-color: #cba3eb63;
+}
+
+tr:hover {
+    background-color: #e5ceff;
+}

@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-        <a class="navbar-brand" href="../pages/dashboard.html"><img src="../img/login.png" width="50px"></a>
+        <a class="navbar-brand" href="../pages/dashboard.php"><img src="../img/login.png" width="50px"></a>
     </nav>
             <div class="row">
                 <div class="container">

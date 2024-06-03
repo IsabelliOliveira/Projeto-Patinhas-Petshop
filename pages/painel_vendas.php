@@ -23,7 +23,7 @@
 
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../pages/dashboard.html"><img src="../img/login.png" width="50px"></a>
+      <a class="navbar-brand" href="../pages/dashboard.php"><img src="../img/login.png" width="50px"></a>
   </nav>
  
 
@@ -76,72 +76,9 @@
             </div>
           </div>
         </div>
-        
-        <!-- Área de venda Serviçio -->
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-header">
-              <h5>Adicionar Serviço</h5>
-            </div>
-            <div class="card-body">
-              <form id="product-form">
-                <div class="form-row">
-                  <div class="form-group col-md-8">
-                    <label for="search">Buscar Codigo do Seviço</label>
-                    <input type="text" class="form-control" id="search">
-                  </div>
-                  <div class="form-group col-md-4 align-self-end">
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
-                  </div>
-                </div>
-              </form>
-              <ul class="list-group mt-3" id="product-list">
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Área de forma de pagamento -->
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              <h5>Pagamento</h5>
-            </div>
-            <div class="card-body">
-              <form id="product-form">
-                <div class="form-row">
-                  <div class="form-group col-md-8">
-                    <label for="search">Metodo de Pagamento</label>
-                    <input list="pagamento" class="form-control" >
-                    <datalist id="pagamento">
-                      <option value="Debito">
-                      <option value="Credito">
-                      <option value="Pix">
-                      <option value="Dinheiro">
-                    </datalist>
-                  </div>
-                </div>
-              </form>
-              <ul class="list-group mt-3" id="product-list">
-              </ul>
-            </div>
-          </div>
-        </div>
-
- 
 
       </div>
     </div>
-
-    <footer class="d-flex justify-content-between align-items-center py-2 border-top ">
-      <p class="col-md-4 mb-0 text-body-secondary ">&copy; Todos os direitos reservados a</p>
-      
-      <ul class="nav col-md-4 justify-content-end">
-        <a href="../pages/dashboard.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <img src="../img/login.png" width="50px">
-        </a>
-      </ul>
-  </footer>
-      
 
 
 </body>
