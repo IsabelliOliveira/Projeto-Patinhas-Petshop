@@ -3,25 +3,14 @@ body {
     background-color: #f4f4f4;
     padding: 10PX;
 }
-
-h1 {
-    color: #333;
-}
-
-h2 {
-    color: #666;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
+/* Estilo para a tabela */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
+/* Estilo para as células da tabela */
 th, td {
     padding: 8px;
     text-align: left;
@@ -39,13 +28,19 @@ tr:hover {
     background-color: #e5ceff;
 }
 
+/* Estilo para links na tabela */
 a {
-    color: #ff3f0f;
     text-decoration: none;
+    color: rgb(68, 2, 112);
 }
 
-a:hover {
-    text-decoration: underline;
+/* Estilo para os botões de ação */
+a.editar {
+    color: green;
+}
+
+a.deletar {
+    color: red;
 }
 
 /* Estilo para o formulário */
@@ -110,6 +105,3 @@ input[type="button"] {
 input[type="button"]:hover {
     background-color: #261f49;
 }
-
-
-  

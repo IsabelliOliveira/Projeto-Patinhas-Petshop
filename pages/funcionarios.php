@@ -161,7 +161,7 @@ if(isset($_GET['delete'])) {
             echo "<td>".$row['username']."</td>";
             echo "<td>".$row['cargo']."</td>";
             echo "<td>
-                    <a href='editFuncionario.php?id=".$row['idFuncionario']."'>Editar</a> 
+                    <a href='../PHP/Edit/editFuncionario.php?id=".$row['idFuncionario']."'>Editar</a> 
                     <a href='funcionarios.php?delete=".$row['idFuncionario']."' onclick='return confirmDelete()'>Deletar</a>
                   </td>";
             echo "</tr>";
@@ -173,7 +173,7 @@ if(isset($_GET['delete'])) {
 
     <!-- Lista de Funcionários -->
     <h2>Adicionar Funcionário</h2>
-    <form method="post" class="form">
+    <form method="post" >
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br>
         <br>

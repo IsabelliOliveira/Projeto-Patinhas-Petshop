@@ -1,3 +1,14 @@
+<?php
+// dashboard.php
+
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../index.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,6 +17,7 @@
     <title>Acesso ADM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    
     <link rel="stylesheet" href="../css/stylesDash.css">
 
 </head>
@@ -23,7 +35,8 @@
 
         <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                  Bem-vindo(a) novamente, fulano!
+                <?php echo 'Bem-vindo, ' . htmlspecialchars($_SESSION['username']) . '!';
+?>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item" href="#">Sair</a></li>
@@ -58,7 +71,7 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="../pages/funcionarios.php">
+                          <a class="nav-link" href="../pages/Clientes.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                             <span class="ml-2">Gerenciar Clientes</span>
                           </a>
@@ -79,6 +92,14 @@
                           <a class="nav-link" href="../pages/funcionarios.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                             <span class="ml-2">Funcionarios</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="../pages/Pets.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dog">
+                              <path d="M12 2C13.1 2 14 2.9 14 4H10C10 2.9 10.9 2 12 2ZM15.5 4C15.78 4 16 4.22 16 4.5V6H17.5C18.33 6 19 6.67 19 7.5V9.2L18.4 13H20.5C21.33 13 22 13.67 22 14.5V16.5C22 17.33 21.33 18 20.5 18H19V19.5C19 20.33 18.33 21 17.5 21H15.5C15.22 21 15 21.22 15 21.5V22C15 22.28 14.78 22.5 14.5 22.5H9.5C9.22 22.5 9 22.28 9 22V21.5C9 21.22 8.78 21 8.5 21H6.5C5.67 21 5 20.33 5 19.5V18H3.5C2.67 18 2 17.33 2 16.5V14.5C2 13.67 2.67 13 3.5 13H5.6L5 9.2V7.5C5 6.67 5.67 6 6.5 6H8V4.5C8 4.22 8.22 4 8.5 4H10V3H14V4H15.5Z"></path>
+                            </svg>
+                            <span class="ml-2">Pets</span>
                           </a>
                         </li>
                       </ul>

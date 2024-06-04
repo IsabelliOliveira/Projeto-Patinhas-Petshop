@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt=br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/media.css">
 
 </head>
+
 <body>
     <div id="container">
         <div class="banner">
@@ -23,19 +25,17 @@
                 Seja bem vindo de volta.
             </h1>
 
-            <div class="box">
-                <input type="text" name="username" id="username" placeholder="username">
-                <input type="password" name="password" id="senha" placeholder="password">
-                
-                <a href="password.html">
-                    <p>Esqueceu a sua senha?</p>
-                </a>
-
-                <button>Login</button>
-                
-                
-            </div>
+            <form action="PHP/authenticate.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+                <input type="submit" value="Login">
+            </form>
         </div>
     </div>
 </body>
+
 </html>
