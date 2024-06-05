@@ -1,5 +1,5 @@
 <?php
-require_once('../pages/DBConnection.php');
+require_once('DBConnection.php');
 
 // Verificar se o ID do funcionário foi passado na URL
 if(isset($_GET['id'])) {
@@ -55,6 +55,7 @@ function editFuncionario($idFuncionario, $nome, $username, $cargo, $senha) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Funcionário</title>
+    <link rel="stylesheet" href="../css/styles_funcionarios.css">
 </head>
 <body>
     <h1>Editar Funcionário</h1>
@@ -71,6 +72,7 @@ function editFuncionario($idFuncionario, $nome, $username, $cargo, $senha) {
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" value="<?php echo $funcionario['senha']; ?>" required><br>
         <input type="submit" name="submitEditFuncionario" value="Salvar Alterações">
+         <a href="funcionarios.php"><input type="button" name="voltar" value="Voltar"></a>
     </form>
 </body>
 </html>

@@ -161,7 +161,7 @@ if(isset($_GET['delete'])) {
             echo "<td>".$row['username']."</td>";
             echo "<td>".$row['cargo']."</td>";
             echo "<td>
-                    <a href='../PHP/Edit/editFuncionario.php?id=".$row['idFuncionario']."'>Editar</a> 
+                    <a href='editFuncionario.php?id=".$row['idFuncionario']."'>Editar</a> 
                     <a href='funcionarios.php?delete=".$row['idFuncionario']."' onclick='return confirmDelete()'>Deletar</a>
                   </td>";
             echo "</tr>";

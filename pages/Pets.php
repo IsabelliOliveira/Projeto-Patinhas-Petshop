@@ -129,7 +129,7 @@ function deletePet($idPet) {
                     echo "<td>";
                     echo "<a href='editar_pet.php?id=" . $row['idPet'] . "'>Editar</a>";
                     echo " | ";
-                    echo "<a href='dashboard.php?action=deletePet&id=" . $row['idPet'] . "' onclick='return confirm(\"Tem certeza que deseja excluir este pet?\")'>Deletar</a>";
+                    echo "<a href='Pets.php?action=deletePet&id=" . $row['idPet'] . "' onclick='return confirm(\"Tem certeza que deseja excluir este pet?\")'>Deletar</a>";
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -176,7 +176,7 @@ function deletePet($idPet) {
         
         <input type="submit" name="submitPet" value="Adicionar Pet">
 
-        <input type="button" name="newCliente" value="Novo Cliente">
+        <a href="Clientes.php"><input type="button" name="newCliente" value="Novo Cliente"></a>
 
     </form>
 

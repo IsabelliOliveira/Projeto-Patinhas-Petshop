@@ -141,7 +141,7 @@ function deleteProduto($idProduto) {
                     echo "<td>" . $row['Quantidade_Estoque'] . "</td>"; // Alterado de 'quantidade_estoque' para 'Quantidade_Estoque'
                     echo "<td>" . $row['Quantidade_Minima'] . "</td>"; // Alterado de 'quantidade_minima' para 'Quantidade_Minima'
                     echo "<td>";
-                    echo "<a href='editar.php?id=" . $row['idProduto'] . "'>Editar</a>";
+                    echo "<a href='editar_produto.php?id=" . $row['idProduto'] . "'>Editar</a>";
                     echo " | ";
                     echo "<a href='dashboard.php?action=deleteProduto&id=" . $row['idProduto'] . "' onclick='return confirm(\"Tem certeza que deseja excluir este produto?\")'>Deletar</a>";
                     echo "</td>";
