@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../css/styles_funcionarios.css">
 </head>
 <body>
-    <h1>Adicionar Novo Agendamento</h1>
+
 
     <nav class="navbar navbar-light bg-light p-3">
         <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
@@ -92,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </nav>
 
+    <h1>Adicionar Novo Agendamento</h1>
 
     <form method="POST">
         <label for="nomeCliente">Nome do Cliente:</label>
