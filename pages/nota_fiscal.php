@@ -1,5 +1,6 @@
 <?php
 require_once('DBConnection.php');
+session_start();
 $dbConnection = new DBConnection();
 $conn = $dbConnection->getConnection();
 

@@ -1,5 +1,6 @@
 <?php
 require_once('DBConnection.php');
+session_start();
 
 // Verificar se o ID do funcionário foi passado na URL
 if(isset($_GET['id'])) {

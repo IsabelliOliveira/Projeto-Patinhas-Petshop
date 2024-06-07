@@ -1,6 +1,6 @@
 <?php
 require_once('../pages/DBConnection.php');
-
+session_start();
 // Verificar se o ID do produto foi passado na URL
 if(isset($_GET['id'])) {
     $idProduto = $_GET['id'];

@@ -1,5 +1,6 @@
 <?php
 require_once('../pages/DBConnection.php');
+session_start();
 
 // Verificar se o ID do pet foi passado na URL
 // Verificar se o ID do pet foi passado na URL
