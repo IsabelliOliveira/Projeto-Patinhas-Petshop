@@ -25,6 +25,17 @@ if (isset($_GET['idVenda']) && isset($_GET['idPagamento'])) {
         echo "Erro: Venda ou Pagamento não encontrados.";
         exit;
     }
+
+    // Obter os itens do pedido
+    $stmt = $conn->prepare("
+        SELECT produto.nome, itempedido.quantidade_vendida, produto.preco, (itempedido.quantidade_vendida * produto.preco) AS total
+        FROM itempedido
+        JOIN produto ON itempedido.idProduto = produto.idProduto
+        WHERE itempedido.idVenda = :idVenda
+    ");
+    $stmt->bindParam(":idVenda", $idVenda);
+    $stmt->execute();
+    $itensPedido = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } else {
     echo "Erro: IDs de Venda e Pagamento não fornecidos.";
     exit;
@@ -38,16 +49,46 @@ if (isset($_GET['idVenda']) && isset($_GET['idPagamento'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nota Fiscal</title>
     <link rel="stylesheet" href="../css/style_nt.css">
+    <style>
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Nota Fiscal</h1>
-    <p><strong>ID da Venda:</strong> <?php echo $notaFiscal['idVenda']; ?></p>
-    <p><strong>Data da Venda:</strong> <?php echo $notaFiscal['data_venda']; ?></p>
-    <p><strong>Valor Total da Venda:</strong> R$ <?php echo number_format($notaFiscal['total_venda'], 2, ',', '.'); ?></p>
-    <p><strong>ID do Pagamento:</strong> <?php echo $notaFiscal['idPagamento']; ?></p>
-    <p><strong>Nome do Cliente:</strong> <?php echo $notaFiscal['nomeCliente']; ?></p>
+    <p><strong>ID da Venda:</strong> <?php echo htmlspecialchars($notaFiscal['idVenda']); ?></p>
+    <p><strong>Data da Venda:</strong> <?php echo htmlspecialchars($notaFiscal['data_venda']); ?></p>
+    <p><strong>Valor Total da Venda:</strong> R$ <?php echo htmlspecialchars(number_format($notaFiscal['total_venda'], 2, ',', '.')); ?></p>
+    <p><strong>ID do Pagamento:</strong> <?php echo htmlspecialchars($notaFiscal['idPagamento']); ?></p>
+    <p><strong>Nome do Cliente:</strong> <?php echo htmlspecialchars($notaFiscal['nomeCliente']); ?></p>
 
-    <a href="../pages/dashboard.php"><input type="button" name="voltar" value="Voltar"></a>
+    <h2>Itens Comprados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($itensPedido as $item): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['nome']); ?></td>
+                    <td><?php echo htmlspecialchars($item['quantidade_vendida']); ?></td>
+                    <td>R$ <?php echo htmlspecialchars(number_format($item['preco'], 2, ',', '.')); ?></td>
+                    <td>R$ <?php echo htmlspecialchars(number_format($item['total'], 2, ',', '.')); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <a href="../pages/dashboard.php" class="no-print"><input type="button" name="voltar" value="Voltar"></a>
+    <button onclick="window.print()" class="no-print">Imprimir</button>
 
 </body>
 </html>

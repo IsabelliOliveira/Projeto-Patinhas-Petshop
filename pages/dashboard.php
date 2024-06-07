@@ -34,13 +34,14 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
         <div class="dropdown">
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="index.php">Sair</a></li>
+                </ul>
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                 <?php echo 'Bem-vindo, ' . htmlspecialchars($_SESSION['username']) . '!';
 ?>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#">Sair</a></li>
-                </ul>
+                
         </div>
 
     </nav>
@@ -59,7 +60,7 @@ if (!isset($_SESSION['user_id'])) {
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="../pages/agenda.php">
+                          <a class="nav-link" href="../pages/agendar_servico.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
                             <span class="ml-2">Agendamentos</span>
                           </a>
@@ -114,84 +115,72 @@ if (!isset($_SESSION['user_id'])) {
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                     </ol>
                 </nav>
-                <h1 class="h2">Dashboard</h1>
+                <h1 class="h2">Funcionario do mês </h1>
                 <p>Esta é a página inicial de uma interface administrativa </p>
 
                 <div class="row my-4">
                     <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                         <div class="card">
-                            <h5 class="card-header">Venda de Serviços</h5>
+                            <h5 class="card-header">Abril</h5>
                             <div class="card-body">
-                              <h5 class="card-title">R$ 5 mil</h5>
-                              <p class="card-text">Fev 1 - Mai 31</p>
-                              <p class="card-text text-success">18.2% aumento desde o mês passado</p>
+                              <img src="../img/vitor.jpeg" width="100%">
                             </div>
                           </div>
                     </div>
                     <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
                         <div class="card">
-                            <h5 class="card-header">Venda de Produtos</h5>
+                            <h5 class="card-header">Maio</h5>
                             <div class="card-body">
-                              <h5 class="card-title">R$2.4 mil</h5>
-                              <p class="card-text">Fev 1 - Mai 31</p>
-                              <p class="card-text text-success">4.6% increase since last month</p>
+                            <img src="../img/lucas.jpeg" width="100%">
                             </div>
                           </div>
                     </div>
                     <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
                         <div class="card">
-                            <h5 class="card-header">Agendamentos</h5>
+                            <h5 class="card-header">Junho?</h5>
                             <div class="card-body">
-                              <h5 class="card-title">43</h5>
-                              <p class="card-text">07 - Jun - 24</p>
+                            <img src="../img/login.png" width="100%">
                             </div>
                           </div>
                     </div>
+                </div>
+                <div class="row my-4"></div>
+                    <div class="row my-4">
+                      <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">Clientes do Mês</h5>
+                            <div class="card-body" id="card-body-pet">
+                            <img src="../img/pet.jpeg" width="45%">
+                            <img src="../img/pet1.jpeg" width="45%">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row my-4"></div>
+                    <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">Comunicado</h5><br>
+                            <h6>Lembrete para a Equipe Petshop Patinhas</h6><br>
+                            <p>Este é um lembrete do nosso compromisso e amizade no Petshop Patinhas. Juntos, dedicamos nosso tempo e esforço para garantir que cada pet que entra por nossas portas receba o melhor cuidado possível. Nossa paixão por esses animais nos une e nos motiva a oferecer serviços de qualidade com amor e carinho. Lembrem-se de que nosso trabalho não é apenas um serviço, mas uma extensão do nosso compromisso com o bem-estar e a felicidade dos nossos amigos de quatro patas. Continuemos a cultivar essa amizade entre nós e com os pets, mantendo sempre nosso compromisso com a excelência.</p>
+                            <div class="card-body" id="card-body-pet">
+                            <img src="../img/equipe.jpeg" width="45%">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
                 </div>
 <!--fim de painél geral-->                
 
-<!--inico tabela de ultimas vendas-->
-                <div class="row">
-                    <div class="col-12 col-xl-8 mb-4 mb-lg-0">
-                        <div class="card">
-                            <h5 class="card-header">Ultimas vendas</h5>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">Nº Pedido</th>
-                                            <th scope="col">Produto</th>
-                                            <th scope="col">Atendente</th>
-                                            <th scope="col">Total</th>
-                                            <th scope="col">Data</th>
-                                            <th scope="col"></th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">17371705</th>
-                                            <td>Volt Premium Bootstrap 5 Dashboard</td>
-                                            <td>johndoe@gmail.com</td>
-                                            <td>R$61.11</td>
-                                            <td>Aug 31 2020</td>
-                                            <td><a href="#" class="btn btn-sm btn-primary">Ver mais</a></td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                </div>
-                                <a href="#" class="btn btn-block btn-light">Ver todos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<!--fim tabela de ultimas vendas-->
+
+
 
                 <footer class="pt-5 d-flex justify-content-between">
                     <span>Todos os direitos reservados a Patinhas Pet shop © 2024 </span>
                 </footer>
             </main>
-        </div>
+        
     </div>
 
 

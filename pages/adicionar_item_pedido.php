@@ -143,37 +143,48 @@ $produtos = $produtosStmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Exibir itens do pedido -->
     <h2>Itens do Pedido</h2>
     <table>
-        <thead>
-            <tr>
-                <th>Nome do Produto</th>
-                <th>Quantidade Vendida</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (count($_SESSION['itemPedido']) > 0): ?>
-                <?php foreach ($_SESSION['itemPedido'] as $item): ?>
-                    <?php
-                    // Obter o nome do produto para exibição
-                    $stmt = $conn->prepare("SELECT nome FROM produto WHERE idProduto = :idProduto");
-                    $stmt->bindParam(":idProduto", $item['idProduto']);
-                    $stmt->execute();
-                    $produto = $stmt->fetch(PDO::FETCH_ASSOC);
-                    ?>
-                    <tr>
-                        <td><?php echo $produto['nome']; ?></td>
-                        <td><?php echo $item['quantidadeVendida']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
+    <thead>
+        <tr>
+            <th>Nome do Produto</th>
+            <th>Quantidade Vendida</th>
+            <th>Preço</th>
+            <th>Valor Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if (count($_SESSION['itemPedido']) > 0): ?>
+            <?php
+            $valorTotal = 0;
+            foreach ($_SESSION['itemPedido'] as $item):
+                // Obter o nome e o preço do produto para exibição
+                $stmt = $conn->prepare("SELECT nome, preco FROM produto WHERE idProduto = :idProduto");
+                $stmt->bindParam(":idProduto", $item['idProduto']);
+                $stmt->execute();
+                $produto = $stmt->fetch(PDO::FETCH_ASSOC);
+                $subtotal = $produto['preco'] * $item['quantidadeVendida'];
+                $valorTotal += $subtotal;
+            ?>
                 <tr>
-                    <td colspan="2">Nenhum item adicionado.</td>
+                    <td><?php echo htmlspecialchars($produto['nome']); ?></td>
+                    <td><?php echo htmlspecialchars($item['quantidadeVendida']); ?></td>
+                    <td><?php echo htmlspecialchars(number_format($produto['preco'], 2, ',', '.')); ?></td>
+                    <td><?php echo htmlspecialchars(number_format($subtotal, 2, ',', '.')); ?></td>
                 </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+            <?php endforeach; ?>
+            <tr>
+                <td colspan="3" style="text-align: right; font-weight: bold;">Total:</td>
+                <td style="font-weight: bold;"><?php echo htmlspecialchars(number_format($valorTotal, 2, ',', '.')); ?></td>
+            </tr>
+        <?php else: ?>
+            <tr>
+                <td colspan="4">Nenhum item adicionado.</td>
+            </tr>
+        <?php endif; ?>
+    </tbody>
+</table>
 
-    <!-- Exibir total de produtos -->
-    <h2>Total de Produtos: R$ <?php echo number_format($totalProdutos, 2, ',', '.'); ?></h2>
+    <!-- Exibir total de produtos 
+    <h2>Total da venda: R$ <?php echo number_format($totalProdutos, 2, ',', '.'); ?></h2>-->
 
     <!-- Formulário para finalizar venda -->
     <h2>Finalizar Venda</h2>
